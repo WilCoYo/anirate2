@@ -21,8 +21,7 @@ function Login() {
   const signup = () =>
     login({ authorizationParams: { screen_hint: "signup" } });
 
-  const logout = () =>
-    auth0Logout({ logoutParams: { returnTo: window.location.origin } }); // May need changed
+ 
 
 
 
