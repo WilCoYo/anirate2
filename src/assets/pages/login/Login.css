@@ -1,0 +1,14 @@
+.login-page {   
+    min-height: 100dvh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
