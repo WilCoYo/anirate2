@@ -1,0 +1,50 @@
+.nav-bar {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 3rem;
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    background: rgba(39, 39, 39, 0.25);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.anirate h1 {
+    padding-left: 1rem;
+    color: #F26B83;
+}
+
+.text-focus-in {
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    text-shadow: 0 0 5px #f26b84d3;
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
