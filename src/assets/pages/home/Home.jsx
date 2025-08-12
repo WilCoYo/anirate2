@@ -14,8 +14,13 @@ function Home() {
   return (
     <div className='home-page'>
 
-        
+    <div className='background-image'>
+
+    </div>
+        <div className='home-box'>
             <button onClick={logout}>Logout</button>
+        </div>
+            
      
 
         

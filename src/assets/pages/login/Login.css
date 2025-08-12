@@ -4,7 +4,7 @@
 
 
 /* Slightly blurring background image */
-body::before {
+.login-page::before {
     content: '';
     position: fixed;
     inset: 0;

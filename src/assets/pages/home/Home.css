@@ -1,0 +1,33 @@
+.home-page {
+    min-height: 100dvh;
+    width: 100vw;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+ 
+}
+
+.background-image {
+    min-height: 100dvh;
+    width: 100vw;
+
+    position: absolute;
+    z-index: -1000;
+    background-image: url('../../images/dandadan-bg-1440.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.background-image::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
+}
+
+   
