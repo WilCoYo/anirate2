@@ -1,3 +1,12 @@
+/* * {
+    outline: 1px red solid;
+} */
+
+.background-image {
+    min-height: 100vh;
+    ;
+}
+
 .login-page {   
     min-height: 100dvh;
     width: 100vw;
@@ -5,10 +14,101 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-image: url('../../images/dandadan-bg-1440.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat
 }
 
 .login-box {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    width: 25rem;
+    height: 35rem;
+
+    
+    background: rgba(39, 39, 39, 0.1);
+    backdrop-filter: blur(30px);
+    border-radius: 3rem;
+
+     /* fallback for old browsers */
+    -webkit-backdrop-filter: blur(60px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+}
+
+.login-hero-text {
+    color: #F26B83;
+}
+
+.login-hero-text:hover {
+    cursor: pointer;
+}
+
+.login-hero-text h1 {
+    margin: 0;
+}
+
+.text-focus-in {
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    text-shadow: 0 0 5px #f26b84d3;
+}
+
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+
+.login-page-btns {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+
+.login-page-btn {
+    width: fit-content;
+}
+
+
+
+.gojo-cat {
+    width: 10rem;
+}
+
+
+/* Responsive background imaging */
+@media (min-width: 1920px) { 
+    .login-page {
+        background-image: url(../../images//dandadan-bg-1080.png);
+    }
 }

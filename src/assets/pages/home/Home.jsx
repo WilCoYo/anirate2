@@ -12,9 +12,13 @@ function Home() {
 
 
   return (
-    <div>
+    <div className='home-page'>
 
-        <button onClick={logout}>Logout</button>
+        
+            <button onClick={logout}>Logout</button>
+     
+
+        
 
     </div>
   )
