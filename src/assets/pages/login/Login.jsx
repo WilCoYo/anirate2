@@ -57,6 +57,8 @@ function Login() {
           }}
           >Anime<strong className='text-focus-in'>Pulse</strong>
           </h1>
+
+          <p>View, rate, and share your favorite anime with friends</p>
         </div>
 
 

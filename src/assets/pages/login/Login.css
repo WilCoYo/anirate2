@@ -2,10 +2,16 @@
     outline: 1px red solid;
 } */
 
-.background-image {
-    min-height: 100vh;
-    ;
+
+/* Slightly blurring background image */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
 }
+
 
 .login-page {   
     min-height: 100dvh;
@@ -24,16 +30,18 @@
 .login-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 
     width: 25rem;
     height: 35rem;
 
     
-    background: rgba(39, 39, 39, 0.1);
-    backdrop-filter: blur(30px);
-    border-radius: 3rem;
+    background: rgba(39, 39, 39, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
 
      /* fallback for old browsers */
     -webkit-backdrop-filter: blur(60px);
@@ -43,6 +51,8 @@
 
 .login-hero-text {
     color: #F26B83;
+   
+    text-align: center;
 }
 
 .login-hero-text:hover {
@@ -51,6 +61,17 @@
 
 .login-hero-text h1 {
     margin: 0;
+
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.login-hero-text p {
+    font-size: 1rem;
+    color: #ffd6e0;
 }
 
 .text-focus-in {
@@ -97,12 +118,31 @@
 
 .login-page-btn {
     width: fit-content;
+    border: none;
+    border-radius: 3rem;
+    padding: .6rem 1.5rem;
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.login-page-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 
 
 .gojo-cat {
-    width: 10rem;
+    width: 18rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
 }
 
 
