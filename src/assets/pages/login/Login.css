@@ -106,44 +106,6 @@
   }
 
 
-.login-page-btns {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    justify-content: end;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-
-.login-page-btn {
-    width: fit-content;
-    border: none;
-    border-radius: 3rem;
-    padding: .6rem 1.5rem;
-    background: linear-gradient(90deg, #ff758c, #ff7eb3);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.login-page-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-
-
-.gojo-cat {
-    width: 18rem;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-}
 
 
 /* Responsive background imaging */
