@@ -77,7 +77,17 @@ function Navigation() {
           </h1>
         </div>
 
-        <div className='profile-login'>
+        
+
+        <div className='navbar-right'>
+            <div className='nav-btns'> 
+                
+            <ul>
+                <li>Home</li>
+                <li>Browse All Anime</li>
+                <li>Watchlist</li>
+            </ul>    
+            </div>
 
             <div 
                 className='nav-icons'

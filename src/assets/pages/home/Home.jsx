@@ -13,20 +13,14 @@ function Home() {
     <div className='home-page'>
 
     <div className='background-image'>
-
     </div>
-        <div className='home-box'>
-            
-            
-        </div>
-       
+
+      <div className='home-box'>
           
-      
-            
-     
-
-        
-
+          
+      </div>
+       
+ 
     </div>
   )
 }
