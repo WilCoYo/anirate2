@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom'
 
-import Login from '../src/assets/pages/login/Login'
 import Home from '../src/assets/pages/home/Home'
 import Navigation from '../src/assets/components/navigation/Navigation'
 
@@ -10,7 +9,7 @@ function App() {
     <div>
       <Navigation />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
       </Routes>
    </div>
   )

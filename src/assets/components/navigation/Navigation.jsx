@@ -54,8 +54,7 @@ function Navigation() {
     }, [isAuthenticated, navigate]) // If authenticated navigate to Homepage
 
 
-    if (isAuthenticated) return null // If authenticated, return null because useEffect is handling redierect
-
+   
 
     if (isLoading) return "Loading...";
 
@@ -71,7 +70,7 @@ function Navigation() {
             <h1
                 onClick={(e) => {
                 e.preventDefault();
-                navigate('/');
+                navigate('/home');
             }}
             >Anime<strong className='text-focus-in'>Pulse</strong>
           </h1>
@@ -81,7 +80,7 @@ function Navigation() {
 
         <div className='navbar-right'>
             <div className='nav-btns'> 
-                
+
             <ul>
                 <li>Home</li>
                 <li>Browse All Anime</li>
@@ -98,29 +97,37 @@ function Navigation() {
             </div>
             
             {showLoginBox === true ? (
-                <div className='login-btns'>
+                    !user ? (
+                    <div className='login-btns'>
 
-                    <button 
-                        onClick={login}
-                        className='login-btn'
-                    >
-                    Login
-                    </button>
+                        <button 
+                            onClick={login}
+                            className='login-btn'
+                        >
+                        Login
+                        </button>
 
-                    <button 
-                        onClick={logout}
-                        className='login-btn'
-                    >
-                    Logout
-                    </button>
-                    <button 
-                        onClick={signup}
-                        className='login-btn'
-                    >
-                    Signup
-                    </button>
+                        <button 
+                            onClick={signup}
+                            className='login-btn'
+                        >
+                        Signup
+                        </button>
 
-                </div>
+                    </div>
+                    ) : (
+                    <div className='login-btns'>
+
+                        <button 
+                            onClick={logout}
+                            className='login-btn'
+                        >
+                        Logout
+                        </button>
+        
+                    </div>
+                    )
+ 
                 
             ) : (
                 <div></div>
