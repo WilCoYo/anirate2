@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import { useAuth0 } from "@auth0/auth0-react";
 import './Navigation.css'
@@ -19,13 +19,31 @@ function Navigation() {
 
     const navigate = useNavigate();
 
+    const [ showLoginBox, setShowLoginBox] = useState(false);
     
 
 
     const signup = () =>
     login({ authorizationParams: { screen_hint: "signup" } });
 
-    
+
+    const handleLoginClick = () => {
+        if(showLoginBox === false) {
+            setShowLoginBox(true);
+        }
+        else {
+            setShowLoginBox(false);
+        }
+    }
+
+
+    // if(navIcons.style.display === 'none') {
+    //         navIcons.style.display = 'inline-flex'
+    //     }
+    //     else {
+    //         navIcons.style.display = 'none';
+    //     }
+
 
 
 
@@ -60,35 +78,49 @@ function Navigation() {
         </div>
 
         <div className='profile-login'>
-            
-            <div className='nav-icons'>
+
+            <div 
+                className='nav-icons'
+                onClick={handleLoginClick}
+                >
                 <img src={profileIcon} alt='profile icon' className='profile-icon'/>
                 <img src={dropdownArrow} alt='dropdown arrow' className='dropdown-arrow' />
             </div>
+            
+            {showLoginBox === true ? (
+                <div className='login-btns'>
+
+                    <button 
+                        onClick={login}
+                        className='login-btn'
+                    >
+                    Login
+                    </button>
+
+                    <button 
+                        onClick={logout}
+                        className='login-btn'
+                    >
+                    Logout
+                    </button>
+                    <button 
+                        onClick={signup}
+                        className='login-btn'
+                    >
+                    Signup
+                    </button>
+
+                </div>
+                
+            ) : (
+                <div></div>
+            )
+            
+            }
+
+            
           
-            <div className='login-btns'>
-
-                <button 
-                    onClick={login}
-                    className='login-btn'
-                >
-                Login
-                </button>
-
-                <button 
-                    onClick={logout}
-                    className='login-btn'
-                >
-                Logout
-                </button>
-                <button 
-                    onClick={signup}
-                    className='login-btn'
-                >
-                Signup
-                </button>
-
-            </div>
+            
         </div>
         
     </div>

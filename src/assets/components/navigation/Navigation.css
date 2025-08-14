@@ -84,6 +84,7 @@
 .nav-icons::before {
     border-left: 1px solid #F26B83;
     border-right: 1px solid #F26B83;
+    border-radius: 1rem;
     transform: scaleY(0);
     transform-origin: center;
 }
@@ -91,6 +92,7 @@
 .nav-icons::after {
     border-top: 1px solid #F26B83;
     border-bottom: 1px solid #F26B83;
+    border-radius: 1rem;
     transform: scaleX(0);
     transform-origin: center;
 }
