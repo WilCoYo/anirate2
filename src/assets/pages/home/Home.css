@@ -30,3 +30,7 @@
     backdrop-filter: blur(.5rem);
 }
 
+.mobile {
+    display: none;
+}
+

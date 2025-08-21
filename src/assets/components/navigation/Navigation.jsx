@@ -5,6 +5,7 @@ import './Navigation.css'
 
 import profileIcon from '../../images/profile-icon.svg'
 import dropdownArrow from '../../images/drop-down.svg'
+import hamburgerMenu from '../../images/hamburger-menu.svg'
 
 function Navigation() {
 
@@ -49,7 +50,7 @@ function Navigation() {
 
     useEffect(() => {
     if (isAuthenticated) {
-        navigate('/home')
+        navigate('/')
     }
     }, [isAuthenticated, navigate]) // If authenticated navigate to Homepage
 
@@ -70,7 +71,7 @@ function Navigation() {
             <h1
                 onClick={(e) => {
                 e.preventDefault();
-                navigate('/home');
+                navigate('/');
             }}
             >Anime<strong className='text-focus-in'>Pulse</strong>
           </h1>
@@ -79,7 +80,7 @@ function Navigation() {
         
 
         <div className='navbar-right'>
-            <div className='nav-btns'> 
+            <div className='nav-btns desktop'> 
 
             <ul>
                 <li>Home</li>
@@ -92,13 +93,24 @@ function Navigation() {
                 className='nav-icons'
                 onClick={handleLoginClick}
                 >
-                <img src={profileIcon} alt='profile icon' className='profile-icon'/>
-                <img src={dropdownArrow} alt='dropdown arrow' className='dropdown-arrow' />
+                <img src={hamburgerMenu} alt='Hamburger Menu Icon' className='menu-icon mobile' />
+                <img src={profileIcon} alt='profile icon' className='profile-icon desktop'/>
+                <img src={dropdownArrow} alt='dropdown arrow' className='dropdown-arrow desktop' />
             </div>
             
             {showLoginBox === true ? (
                     !user ? (
                     <div className='login-btns'>
+
+                        <div className='nav-btns mobile'> 
+
+                            <ul>
+                                <li>Home</li>
+                                <li>Browse All Anime</li>
+                                <li>Watchlist</li>
+                            </ul>   
+
+                        </div>
 
                         <button 
                             onClick={login}
@@ -117,6 +129,16 @@ function Navigation() {
                     </div>
                     ) : (
                     <div className='login-btns'>
+
+                        <div className='nav-btns mobile'> 
+
+                            <ul>
+                                <li>Home</li>
+                                <li>Browse</li>
+                                <li>Watchlist</li>
+                            </ul>   
+
+                        </div>
 
                         <button 
                             onClick={logout}
