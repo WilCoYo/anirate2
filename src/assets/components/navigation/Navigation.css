@@ -107,7 +107,7 @@
 
 .login-btns {
     position: fixed;
-    top: 5.5rem;
+    top: 6rem;
     right: 2rem;
 
     display: flex;
@@ -146,8 +146,19 @@
 
 
 @media only screen and (max-width: 58rem) {
+    .anirate h1 {
+      font-size: 2.75rem;
+    }
+
+    .nav-icons {
+     
+      top: 1.75rem;
+      right: 1rem;
+    }
+
     .menu-icon {
       width: 3rem;
+     
     }
 
     .nav-btns {
@@ -164,7 +175,9 @@
 
 
     .nav-btns {
-        padding-right: 0;
+        padding: 0;
+        margin: 0;
+        
     }
 
     .nav-btns ul {
@@ -178,7 +191,8 @@
         list-style: none;
         padding-right: 2rem;
         font-size: 1.5rem;
-        font-weight: bold;
+        font-weight: 400;
+        text-align: center;
 
         border-radius: 1rem;
 
@@ -198,8 +212,8 @@
     }
 
     .login-btns {
-        top: 7.5rem;
-        right: 1rem;
+        top: 6.5rem;
+        right: 0rem;
     }
     
 } 
