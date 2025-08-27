@@ -8,7 +8,7 @@ const app = express();
 async function ensureUser(req, res, next) {
     try {
         const auth0Id = req.auth.payload.sub;
-        const email = req.auth[`${process.env.AUTH0_NAMESPACE}/email`] || req.auth.email;
+        const email = req.auth.payload.email;
 
         const username = 
             req.auth.payload.nickname ||
@@ -21,10 +21,6 @@ async function ensureUser(req, res, next) {
 
         if(!user) {
             
-
-
-
-
             user = new User({
                 auth0Id,
                 email,
@@ -46,10 +42,6 @@ async function ensureUser(req, res, next) {
         res.status(500).json({ error: "Error creating or fetching user" })
     }
 
-
-    app.get('/api/test-user', authenticate, ensureUser, (req, res) => {
-    res.json({ message: "User Created!", user: req.userRecord })
-})
 }
 
 module.exports = ensureUser; 
