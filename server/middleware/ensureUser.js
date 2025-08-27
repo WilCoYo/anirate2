@@ -8,25 +8,41 @@ const app = express();
 async function ensureUser(req, res, next) {
     try {
         const auth0Id = req.auth.payload.sub;
+        const email = req.auth[`${process.env.AUTH0_NAMESPACE}/email`] || req.auth.email;
+
+        const username = 
+            req.auth.payload.nickname ||
+            req.auth.payload.given_name ||
+            req.auth.payload.name ||
+            `user_${Date.now()}`;
+
+
         let user = await User.findOne({ auth0Id });
 
         if(!user) {
-            user = await User.create({
+             const generatedUsername =
+                req.auth.nickname ||
+                (email ? email.split("@")[0] : null) ||
+                `user_${Date.now()}`;
+
+
+
+
+            user = new User({
                 auth0Id,
-                username:
-                    req.auth.payload.name ||
-                    req.auth.payload.nickname || 
-                    req.auth.payload.email?.split('@')[0] || 
-                    "New User",
+                email,
+                username: generatedUsername,
                 watchlist: [],
                 friends: []
             });
+            await user.save();
+
             console.log("New User Created", user);
         } else {
             console.log("Existing user found:", user.username)
         }
 
-        req.userRecord = user;
+        req.user = user;
         next();
     } catch (err) {
         console.error("Error ensuring user:", err);

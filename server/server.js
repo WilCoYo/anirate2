@@ -3,8 +3,6 @@ const mongoose = require('mongoose');
 const { auth } = require('express-oauth2-jwt-bearer');
 const ensureUser = require('./middleware/ensureUser');
 const User = require('./models/User');
-
-
 require('dotenv').config();
 
 
@@ -19,6 +17,7 @@ mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on('connected', () => {
     console.log('MongoDB connected successfully');
+    console.log('Using database:', mongoose.connection.name);
 });
 
 mongoose.connection.on('error', (err) => {
@@ -34,10 +33,10 @@ const authenticate = auth({
 });
 
 // Create api/me route
-app.get('/api/me', authenticate, ensureUser, (req, res) => {
-  res.json({
-    message: "User is authenicated & ensured in MongoDB",
-    user: req.userRecord,
+app.get('/api/test-user', authenticate, ensureUser, (req, res) => {
+  res.json({ 
+    message: "User Created!", 
+    user: req.userRecord 
   });
 });
 
