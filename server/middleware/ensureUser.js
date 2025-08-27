@@ -20,10 +20,7 @@ async function ensureUser(req, res, next) {
         let user = await User.findOne({ auth0Id });
 
         if(!user) {
-             const generatedUsername =
-                req.auth.nickname ||
-                (email ? email.split("@")[0] : null) ||
-                `user_${Date.now()}`;
+            
 
 
 
@@ -31,7 +28,7 @@ async function ensureUser(req, res, next) {
             user = new User({
                 auth0Id,
                 email,
-                username: generatedUsername,
+                username,
                 watchlist: [],
                 friends: []
             });
