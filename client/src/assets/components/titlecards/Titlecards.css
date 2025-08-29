@@ -1,0 +1,18 @@
+* {
+    outline: 1px red solid;
+}
+
+.titlecard-section {
+    width: 100%;
+    min-height: 100%;
+
+}
+
+.titlecard-box {
+    height: auto;
+    width: 20rem;
+
+    background: rgba(39, 39, 39, 0.25);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
+}

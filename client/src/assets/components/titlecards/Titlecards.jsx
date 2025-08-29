@@ -4,7 +4,21 @@ import './Titlecards.css'
 
 function Titlecards() {
   return (
-    <div>Titlecards</div>
+    <div className='titlecard-section'>
+
+      <div className='titlecard-box'>
+        <div className='titlecard-date'>
+          
+        </div>
+        <div className='titlecard-img'>
+            
+        </div>
+        <div className='titlecard-title'>
+          
+        </div>
+      </div>
+
+    </div>
   )
 }
 

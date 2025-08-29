@@ -9,24 +9,20 @@ import hamburgerMenu from '../../images/hamburger-menu.svg'
 
 function Navigation() {
 
+ 
     const {
-    isLoading, // Loading state, the SDK needs to reach Auth0 on load
+    isLoading, 
     isAuthenticated,
     error,
-    loginWithRedirect: login, // Starts the login flow
+    loginWithRedirect,
+    getAccessTokenSilently,
     logout: auth0Logout, // Starts the logout flow
     user, // User profile
     } = useAuth0();
-
+    
     const navigate = useNavigate();
 
     const [ showLoginBox, setShowLoginBox] = useState(false);
-    
-
-
-    const signup = () =>
-    login({ authorizationParams: { screen_hint: "signup" } });
-
 
     const handleLoginClick = () => {
         if(showLoginBox === false) {
@@ -37,7 +33,58 @@ function Navigation() {
         }
     }
 
+    
 
+    const handleLogin = async () => {
+        await loginWithRedirect({
+            authorizationParams: {
+                audience: import.meta.env.VITE_AUTH0_AUDIENCE,
+                scope: 'openid profile email'
+            }
+        });
+    };
+
+    const signup = async () => {
+        await loginWithRedirect({
+            screen_hint: 'signup',
+            authorizationParams: {
+                audience: import.meta.env.VITE_AUTH0_AUDIENCE,
+                scope: 'openid profile email'
+            }
+        })
+    }
+
+    const logout = () =>
+        auth0Logout({ logoutParams: { returnTo: window.location.origin } }); // May need changed
+
+
+
+    useEffect(() => {
+        const createUserInMongo = async () => {
+            if(isAuthenticated) {
+                try {
+                    const token = await getAccessTokenSilently({
+                        audience: import.meta.env.VITE_AUTH0_AUDIENCE,
+                        scope: 'openid profile email',
+                    });
+
+                    const res = await fetch('/api/text-user', {
+                        method: 'GET',
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    });
+
+                    const data = await res.json();
+                    console.log('MongoDB user created/found:', data.user);
+                } catch (err) {
+                    console.error('Error ensuring user in MongoDB', err)
+                }
+            }
+        };
+
+        createUserInMongo();
+    }, [isAuthenticated, getAccessTokenSilently])
 
 
     useEffect(() => {
@@ -53,8 +100,7 @@ function Navigation() {
 
 
 
-    const logout = () =>
-    auth0Logout({ logoutParams: { returnTo: window.location.origin } }); // May need changed
+
 
 
     
@@ -106,9 +152,9 @@ function Navigation() {
                             </ul>   
 
                         </div>
-
+                        
                         <button 
-                            onClick={login}
+                            onClick={loginWithRedirect}
                             className='login-btn'
                         >
                         Login
@@ -134,7 +180,7 @@ function Navigation() {
                             </ul>   
 
                         </div>
-
+                        <span>Hello, { user?.nickname || user?.email }</span>
                         <button 
                             onClick={logout}
                             className='login-btn'
