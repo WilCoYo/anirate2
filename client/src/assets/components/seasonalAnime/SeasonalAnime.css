@@ -1,0 +1,16 @@
+.seasonal-section {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+.seasonal-list {
+    display: flex;
+    overflow-x: scroll ;
+    
+}
+
+* {
+    outline: 1px red solid;
+}
+

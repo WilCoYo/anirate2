@@ -3,7 +3,7 @@ import React from 'react'
 
 import './Home.css'
 import Titlecards from '../../components/titlecards/Titlecards'
-import seasonalAnime from '../../components/seasonalAnime/SeasonalAnime'
+import SeasonalAnime from '../../components/seasonalAnime/SeasonalAnime'
 
 function Home() {
 
@@ -17,8 +17,9 @@ function Home() {
     </div>
     <div className='home-section'>
     <div></div>
-    <Titlecards />
     <div></div>
+    <SeasonalAnime />
+    
     </div>
 
 

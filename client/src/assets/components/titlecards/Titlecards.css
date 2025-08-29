@@ -1,18 +1,68 @@
-* {
-    outline: 1px red solid;
-}
-
-.titlecard-section {
+.titlecards {
     width: 100%;
     min-height: 100%;
 
 }
 
-.titlecard-box {
+.titlecards-list {
+    display: flex;
+    height: 100%;
+}
+
+
+
+.titlecard {
     height: auto;
-    width: 20rem;
+
+    padding: 0rem 1rem;
 
     background: rgba(39, 39, 39, 0.25);
     backdrop-filter: blur(12px);
     box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
 }
+
+.titlecard-img {
+    position: relative;
+    display: inline-block;
+}
+
+.titlecard-img img {
+    display: block;
+    height: auto;
+}
+
+.titlecard-img::after {
+    content: "";
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0);
+    transition: background .3s ease;
+}
+
+.titlecard-img:hover::after {
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+
+
+.titlecard-img:hover .titlecard-title {
+   display: block
+}
+
+.titlecard-title {
+    position: absolute;
+    top: 3rem;
+    left: 0rem;
+    
+    z-index: 10;
+    width: 100%;
+    font-size: 1.25rem;
+    text-align: center;
+    
+    display: none;
+}
+
