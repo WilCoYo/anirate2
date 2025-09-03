@@ -14,7 +14,8 @@
 .titlecard {
     height: auto;
 
-    padding: 0rem 1rem;
+    padding: .25rem 1rem;
+    margin: 0 .5rem;
 
     background: rgba(39, 39, 39, 0.25);
     backdrop-filter: blur(12px);
@@ -24,11 +25,15 @@
 .titlecard-img {
     position: relative;
     display: inline-block;
+
+    min-height: 350px;
 }
 
 .titlecard-img img {
     display: block;
     height: auto;
+
+    padding: 1rem 0;
 }
 
 .titlecard-img::after {
@@ -42,7 +47,7 @@
     transition: background .3s ease;
 }
 
-.titlecard-img:hover::after {
+.titlecard-img:hover::after { 
     background: rgba(0, 0, 0, 0.8);
     cursor: pointer;
 }

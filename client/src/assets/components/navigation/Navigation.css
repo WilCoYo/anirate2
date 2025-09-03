@@ -24,8 +24,8 @@
 .anirate h1 {
     padding-left: 1rem;
     color: #F26B83;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white; */
 }
 
 .text-focus-in {
@@ -50,8 +50,8 @@
   padding-right: 2rem;
   font-size: 1.5rem;
   font-weight: bold;
-    -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: white;
+    /* -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: white; */
 }
 
 .nav-btns li:hover {

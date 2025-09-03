@@ -2,16 +2,17 @@
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
+
+    background: rgba(39, 39, 39, 0.25);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .seasonal-list {
     display: flex;
     overflow-x: scroll ;
+    scrollbar-width: none;
     
-}
-
-* {
-    outline: 1px red solid;
 }
 
 .seasonal-section h3 {
@@ -19,6 +20,7 @@
     font-size: 2.25rem;
     margin: .5rem 0;
     text-align: center;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: white;
+        /* -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white; */
+    text-shadow: 0 0 5px #b61c38b9;
 }
