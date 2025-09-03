@@ -1,0 +1,29 @@
+.animenews-section {
+
+}
+
+.animenews-section h3 {
+    color: #F26B83;
+    font-size: 2.25rem;
+    margin: .5rem 0;
+    text-align: center;
+        /* -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white; */
+    text-shadow: 0 0 5px #b61c38b9;
+}
+
+.animenews-list {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.animenews {
+    text-align: center;
+}
+
+
+.animenews h4 {
+    text-align: center;
+}
+

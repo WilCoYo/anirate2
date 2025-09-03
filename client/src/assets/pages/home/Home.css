@@ -1,22 +1,23 @@
 /* * {
     outline: 1px red solid;
+    
 } */
 
 
 .home-page {
-    height: 100dvh;
+    min-height: 100dvh;
     width: 100vw;
- 
 }
 
 .home-section {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 8rem .8fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 8rem 1fr 1fr;
 
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
 }
+
 
 .background-image {
     min-height: 100dvh;

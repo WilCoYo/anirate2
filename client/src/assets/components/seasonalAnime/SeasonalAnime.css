@@ -1,11 +1,12 @@
 .seasonal-section {
     width: 100%;
     min-height: 100%;
-    overflow-x: hidden;
-
+    overflow-x: scroll ;
     background: rgba(39, 39, 39, 0.25);
     backdrop-filter: blur(12px);
     box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
+
+    grid-column-start: span 2;
 }
 
 .seasonal-list {

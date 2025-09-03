@@ -18,7 +18,7 @@ const cardsRef = useRef(null);
 // Need to take the fetchSeasonalAnime function pull it into an array to access data
 useEffect(() => {
  
-  const loadAnime = async () => {
+  const loadSeasonalAnime = async () => {
     try {
       const data = await fetchSeasonalAnime();
       setSeasonalAnimeList(data);
@@ -28,7 +28,7 @@ useEffect(() => {
       setLoading(false)
     }
   };
-  loadAnime();
+  loadSeasonalAnime();
  
 }, [])
 
