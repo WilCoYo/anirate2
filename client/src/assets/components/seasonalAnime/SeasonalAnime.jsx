@@ -5,6 +5,8 @@ import './SeasonalAnime.css'
 import { fetchSeasonalAnime } from '../../../api/jikanApi'
 import Titlecards from '../titlecards/Titlecards';
 
+
+
 function SeasonalAnime() {
 
 
@@ -16,8 +18,6 @@ const cardsRef = useRef(null);
 // Need to take the fetchSeasonalAnime function pull it into an array to access data
 useEffect(() => {
  
-
-
   const loadAnime = async () => {
     try {
       const data = await fetchSeasonalAnime();
@@ -32,9 +32,12 @@ useEffect(() => {
  
 }, [])
 
+
+
+// To make it so titlecards scroll left and right 
 useLayoutEffect(() => {
   const ref = cardsRef.current;
-  console.log('Ref assigned:', ref); // Should now log the DOM node
+  console.log('Ref assigned:', ref); 
 
   const handleWheel = (event) => {
     if (ref) {
@@ -54,9 +57,11 @@ useLayoutEffect(() => {
 
 
 
+
+
   return (
     <div className='seasonal-section'>
-      <h3>Summer</h3>
+      <h3>Summer Anime</h3>
       <div className='seasonal-list' ref={cardsRef}>
          {loading ? (
           <p>Loading Seasonal Anime...</p>
@@ -66,6 +71,7 @@ useLayoutEffect(() => {
                 anime?.mal_id && <Titlecards key={anime.mal_id} anime={anime} />
             )
           )}
+          
       </div>
 
     </div>
