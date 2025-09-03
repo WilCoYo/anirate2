@@ -1,0 +1,24 @@
+.watchlist-title h3{
+    color: #F26B83;
+    font-size: 2.25rem;
+    margin: .5rem 0;
+    text-align: center;
+        /* -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white; */
+    text-shadow: 0 0 5px #b61c38b9;
+
+}
+
+.weekday {
+    background: rgba(39, 39, 39, 0.5);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.weekday h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+}
+    
