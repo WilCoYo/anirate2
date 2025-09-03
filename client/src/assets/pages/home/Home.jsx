@@ -21,7 +21,7 @@ function Home() {
     <div></div>
     <div></div>
     
-      <AnimeNews />
+      <></>
     
       <WeeklyWatchlist />
      
