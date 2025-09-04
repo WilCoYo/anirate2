@@ -22,8 +22,14 @@ function Home() {
     <div></div>
     
       <></>
-    
-      <WeeklyWatchlist />
+      <div className='weekly-watchlist-section'>
+        <WeeklyWatchlist />
+      </div>
+      <div className='anime-news-section'>
+        <AnimeNews />
+      </div>
+      
+      
      
       <SeasonalAnime />
     

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect, useRef, useLayoutEffect} from 'react'
 import './weeklyWatchlist.css'
 import { fetchSeasonalAnime } from '../../../api/jikanApi'
 import { useAuth0 } from "@auth0/auth0-react";
@@ -119,25 +119,53 @@ const weekdays = [
     'sunday'
 ];
 
+const [activeDay, setActiveDay] = useState('monday');
+
+// To make it so titlecards scroll left and right 
+
+  const listRefs = useRef({});
 
 
-const extendWeekday = weekdayId => {
-    const element = document.getElementById(weekdayId);
-    if(element) {
-        if(element.style.display === 'none' || element.style.display===''){
-            element.style.display = 'flex';
-        } else {
-            element.style.display = 'none'
+    const handleWheel = (event, day) => {
+        const el = listRefs.current[day];
+        if(!el) return;
+
+        const canScroll = el.scrollWidth > el.clientWidth;
+
+        if(canScroll) {
+            event.preventDefault();
+            event.stopPropagation();
+            el.scrollLeft += event.deltaY;
         }
-    }
+    };
+
+
+
+  useEffect(() => {
+     const el = listRefs.current[activeDay];
+     if(!el) return;
+
+     const wheelHandler = (e) => handleWheel(e, activeDay);
+     el.addEventListener("wheel", wheelHandler, { passive: false });
+
+     return () => {
+        el.removeEventListener("wheel", wheelHandler);
+     };
+
+
+
+  }, [activeDay])
+
+const toggleWeekday = (day) => {
+    setActiveDay(prev => prev === day ? null : day)
 }
 
 
 
 
   return (
-    <div className='weekly-watchlist-section'>
-        <div className='watchlist-dropdown'>
+    <div className='weekly-watchlist-section' >
+        <div className='watchlist-dropdown' >
             
 
         
@@ -149,19 +177,27 @@ const extendWeekday = weekdayId => {
 
             {weekdays.map((day) => (
                 <div key={day} className='weekday'>
-                    <h4 onClick={() => extendWeekday(`${day}-list`)}>{day.charAt(0).toUpperCase() + day.slice(1)}</h4>
-                    <div className='weekday-anime-list'>
-                        {animeByDay[day]?.length > 0 ? (
-                            <div id={`${day}-list`} style={{display: 'none'}}>
-                                {animeByDay[day].map(
+
+                    <h4 onClick={() => toggleWeekday(day)}>{day.charAt(0).toUpperCase() + day.slice(1)}</h4>
+                    
+                    {activeDay === day && (
+                        <div
+                            className='weekday-anime-list'
+                            ref={(el) => (listRefs.current[day] = el)}
+                        >
+                            {animeByDay[day]?.length > 0 ? (
+                                animeByDay[day].map(
                                     (anime) => 
-                                        anime?.mal_id && <Titlecards key={anime.mal_id} anime={anime} />
-                                )}
-                            </div>
-                        ) : (
-                        <div id={`${day}-list`} style={{display: 'none'}}>No anime this day</div>
-                        )}
-                    </div>
+                                        anime?.mal_id && (
+                                            <Titlecards key={anime.mal_id} anime={anime} />
+                                        )
+                                )
+                            ) : (
+                                <div>No anime this day</div>
+                            )}
+                        </div>
+                    )}
+                    
                 </div> 
             ))}
             

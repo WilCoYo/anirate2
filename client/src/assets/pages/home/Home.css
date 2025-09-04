@@ -12,7 +12,8 @@
 .home-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 8rem 1fr 1fr;
+    grid-template-rows: 8rem auto auto;
+    gap: 1rem;
 
     min-height: 100vh;
     width: 100vw;
@@ -42,4 +43,13 @@
 .mobile {
     display: none;
 }
+
+
+.anime-news-section,
+.weekly-watchlist-section {
+    background: rgba(39, 39, 39, 0.25);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
 
