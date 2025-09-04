@@ -37,7 +37,7 @@ useEffect(() => {
 // To make it so titlecards scroll left and right 
 useLayoutEffect(() => {
   const ref = cardsRef.current;
-  console.log('Ref assigned:', ref); 
+                                      // console.log('Ref assigned:', ref); 
 
   const handleWheel = (event) => {
     if (ref) {

@@ -36,9 +36,9 @@ useEffect(() => {
 
 
                             // Test to see if Seasonal Anime List is getting data
-                            useEffect(() => {
-                                console.log('Seasonal Anime List', seasonalAnimeList)
-                            }, [seasonalAnimeList])
+                            // useEffect(() => {
+                            //     console.log('Seasonal Anime List', seasonalAnimeList)
+                            // }, [seasonalAnimeList])
 
 
 // Mapping and normalizing weekdays
@@ -90,7 +90,7 @@ useEffect(() => {
 
     const grouped = seasonalAnimeList.reduce((acc, anime) => {
       const day = getAnimeWeekday(anime?.broadcast);
-                                console.log(anime.title, anime?.broadcast?.day, "→", day);
+                                // console.log(anime.title, anime?.broadcast?.day, "→", day);
       if (day) {
         if (!acc[day]) acc[day] = [];
         acc[day].push(anime);
@@ -105,7 +105,7 @@ useEffect(() => {
 }, [seasonalAnimeList]);
 
 useEffect(() => {
-  console.log("Anime by day updated:", animeByDay);
+                                //   console.log("Anime by day updated:", animeByDay);
 }, [animeByDay]);
 
 

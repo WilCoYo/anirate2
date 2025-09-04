@@ -2,10 +2,9 @@ import React from 'react'
 
 
 import './Home.css'
-import Titlecards from '../../components/titlecards/Titlecards'
 import SeasonalAnime from '../../components/seasonalAnime/SeasonalAnime'
-import AnimeNews from '../../components/animeNews/animeNews'
-import WeeklyWatchlist from '../../components/weeklyWatchlist/weeklyWatchlist'
+import AnimeNews from '../../components/animeNews/AnimeNews'
+import WeeklyWatchlist from '../../components/weeklyWatchlist/WeeklyWatchlist'
 
 function Home() {
 
