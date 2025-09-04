@@ -34,13 +34,15 @@ if(loading) return <p>Loading Anime News...</p>
             ) : (
                 news.map(
                     (anime) =>
-                        <div className='animenews' key={anime.mal_id}>
+                        <div className='animenews' key={anime.mal_id} >
+                            <a href={anime.url} target="_blank">
                         
-                            <h4>{anime?.title}</h4>
-                            <img 
-                                src={anime?.images?.jpg.image_url}
-                            />
-                         
+                                
+                                <img 
+                                    src={anime?.images?.jpg.image_url}
+                                />
+                                <h4>{anime?.title}</h4>
+                            </a>
                         </div>
                         
                     

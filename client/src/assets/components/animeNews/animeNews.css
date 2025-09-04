@@ -1,6 +1,3 @@
-.animenews-section {
-
-}
 
 .animenews-section h3 {
     color: #F26B83;
@@ -20,10 +17,21 @@
 
 .animenews {
     text-align: center;
+    padding-bottom: 1rem;
 }
 
 
 .animenews h4 {
     text-align: center;
+    margin-top: 0;
 }
+
+.animenews a {
+    color: white;
+}
+
+.animenews a:hover {
+    color: #F26B83;
+}
+
 
