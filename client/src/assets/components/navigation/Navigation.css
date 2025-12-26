@@ -1,9 +1,12 @@
+/* z index stacking issues can occer when using backdrop-filter and the like */
+
 .nav-bar {
     padding: 0;
     margin: 0;
     width: 100%;
     min-height: 3rem;
-    
+    z-index: 1000;
+
     position: fixed;
     top: 0;
     right: 0;
@@ -113,6 +116,7 @@
     position: fixed;
     top: 6rem;
     right: 2rem;
+     z-index: 1002;
 
     display: flex;
     flex-direction: column;
