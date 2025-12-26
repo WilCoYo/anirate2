@@ -4,15 +4,15 @@ import './Titlecards.css'
 import addIcon from '../../images/add-icon.svg'
 import infoIcon from '../../images/info-icon.svg'
 
-function Titlecards({anime}) {
+function Titlecards({anime, parentComponent}) {
 
 
   return (
     
-      <div className='titlecards'>
-        <div className='titlecards-list'>
+      <div className={`titlecards ${parentComponent}`}>
+        <div className={`titlecards-list ${parentComponent}`}>
 
-          <div className='titlecard'>
+          <div className={`titlecard ${parentComponent}`}>
 
                                                         {/* took off date and time for now - add later if wanted */}
 

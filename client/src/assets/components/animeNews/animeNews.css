@@ -11,12 +11,12 @@
 
 .animenews-list {
     display: flex;
-    justify-content: center;
-    gap: 4rem;
+    justify-content: space-around;
 }
 
 .animenews {
     text-align: center;
+    padding-top: 2.5rem;
     padding-bottom: 1rem;
 }
 

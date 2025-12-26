@@ -24,9 +24,9 @@ function Home() {
       <div className='weekly-watchlist-section'>
         <WeeklyWatchlist />
       </div>
-      <div className='anime-news-section'>
+      {/* <div className='anime-news-section'>
         <AnimeNews />
-      </div>
+      </div> */}
       
       
      

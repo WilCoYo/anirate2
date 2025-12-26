@@ -189,7 +189,7 @@ const toggleWeekday = (day) => {
                                 animeByDay[day].map(
                                     (anime) => 
                                         anime?.mal_id && (
-                                            <Titlecards key={anime.mal_id} anime={anime} />
+                                            <Titlecards key={anime.mal_id} anime={anime} parentComponent="weekday-titlecard"/>
                                         )
                                 )
                             ) : (

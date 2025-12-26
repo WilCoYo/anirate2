@@ -1,14 +1,17 @@
+/* Take a look at right margin of this section - it appears as if there's a small margin */
+
 .weekly-watchlist-section {
     overflow: scroll;
     max-width: 100%;
     max-height: 100%;
 }
 
+/* Note that you should NOT justify-content: center a horizontally scrolling section. It will clip off to the left */
 .weekday-anime-list {
     display: flex;
     overflow-x: auto;
+    scrollbar-width: none;
 }
-
 
 .watchlist-title h3{
     color: #F26B83;
@@ -34,7 +37,6 @@
     color: white;
 }
 
-
 .weekday h4 {
     margin: 0;
     padding: 0;
@@ -44,7 +46,16 @@
     cursor: pointer;
 }
 
-.weekday-anime-list {
-    display: flex;
-    overflow-x: scroll;
+.weekday-titlecard {
+    width: fit-content;
+}
+
+
+/* Simple way to center weekday-anime-list without using justify content */
+.weekday-titlecard:first-child {
+    margin-left: auto;
+}
+
+.weekday-titlecard:last-child {
+    margin-right: auto;
 }
