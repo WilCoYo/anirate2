@@ -1,11 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import './Titlecards.css'
 import addIcon from '../../images/add-icon.svg'
 import infoIcon from '../../images/info-icon.svg'
 
-function Titlecards({anime, parentComponent}) {
 
+function Titlecards({anime, parentComponent}) {
+const navigate = useNavigate();
 
   return (
     
@@ -43,10 +45,24 @@ function Titlecards({anime, parentComponent}) {
 
               </div>
 
-              <div className='titlecard-icons'>
+              <div className='titlecard-btns'>
 
-                <img src={addIcon} alt='Add Icon' />
-                <img src={infoIcon} alt='Information Icon' />
+                <button className='titlecard-btn-lft btn'
+                >
+                      <img src={addIcon} alt='Add Icon' />
+                </button>
+
+                <button className='titlecard-btn-rt btn'
+                        onClick={(e) => {
+                          e.preventDefault();
+                          navigate('/info', {state: { anime }}); //pass anime to Info page
+                        }}
+                >
+                        <img src={infoIcon} alt='Information Icon' />
+                </button>                                          
+
+                
+                
 
               </div>
 

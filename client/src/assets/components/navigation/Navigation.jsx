@@ -124,9 +124,15 @@ function Navigation() {
             <div className='nav-btns desktop'> 
 
             <ul>
-                <li>Home</li>
-                <li>Browse All Anime</li>
-                <li>Watchlist</li>
+                <button>
+                    Home
+                </button>
+                <button>
+                    Browse All Anime
+                </button>
+                <button>
+                    Watchlist
+                </button>
             </ul>    
             </div>
 
@@ -146,9 +152,16 @@ function Navigation() {
                         <div className='nav-btns mobile'> 
 
                             <ul>
-                                <li>Home</li>
-                                <li>Browse All Anime</li>
-                                <li>Watchlist</li>
+                                <button>
+                                    Home
+                                </button>
+                                <button>
+                                    Browse All Anime
+                                </button>
+                                <button>
+                                    Watchlist
+                                </button>
+                               
                             </ul>   
 
                         </div>

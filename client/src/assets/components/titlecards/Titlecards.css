@@ -71,7 +71,7 @@
     display: none;
 }
 
-.titlecard-icons {
+.titlecard-btns {
     display: flex;
     justify-content: space-between;
 }

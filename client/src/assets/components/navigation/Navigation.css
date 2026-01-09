@@ -47,17 +47,19 @@
   display: flex;
 }
 
-.nav-btns li  {
+.nav-btns button  {
   color: #F26B83;
   list-style: none;
   padding-right: 2rem;
   font-size: 1.5rem;
   font-weight: bold;
+  border: none;
+  background-color: transparent;
     /* -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: white; */
 }
 
-.nav-btns li:hover {
+.nav-btns button:hover {
     text-shadow: 0 0 5px #f26b84d3;
     scale: 1.1;
     cursor: pointer;
@@ -116,7 +118,7 @@
     position: fixed;
     top: 6rem;
     right: 2rem;
-     z-index: 1002;
+    z-index: 1002;
 
     display: flex;
     flex-direction: column;
@@ -127,6 +129,8 @@
 
     padding: 2rem;
     box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.2);
+
+    
 
         /* fallback for old browsers */
     -webkit-backdrop-filter: blur(60px);
@@ -141,6 +145,17 @@
     color: white;
     box-shadow: 0 .5rem 2rem rgba(139, 136, 136, 0.2);
 
+
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
      /* fallback for old browsers */
     -webkit-backdrop-filter: blur(60px);
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -151,6 +166,7 @@
     
     border: 2px solid #F26B83;
 }
+
 
 
 @media only screen and (max-width: 58rem) {
